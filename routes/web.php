@@ -17,9 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('fotos/{numero?}',function($numero = 'sin número'){
+Route::get('fotos', function(){
+    return view('fotos');
+})->name('foto');
 
-    return 'Estás en la galeria de fotos: '.$numero;
-})->where('numero', '[0-9]+');
-
-Route::view('galeria','fotos', [ 'numero'=> 125]);
+Route::get('blog', function(){
+    return view('blog');
+})->name('noticias');
