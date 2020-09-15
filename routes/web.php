@@ -1,36 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/', [PagesController::class, 'inicio']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::resource('fotos', PagesController::class, ['except' => ['fotos', 'edit']]);
 
-Route::get('fotos', function(){
-    return view('fotos');
-})->name('foto');
+Route::get('fotos', [PagesController::class, 'fotos'])->name('fotos');
 
-Route::get('blog', function(){
-    return view('blog');
-})->name('noticias');
+Route::get('blog', [PagesController::class, 'blog'])->name('noticias');
 
-Route::get('nosotros/{nombre?}',function($nombre = null){
-
-    $equipo = ['Ignacio','Juanito','Pedrito'];
-
-    //return view('nosotros', ['equipo'=>$equipo,'nombre'=>$nombre]);
-    return view('nosotros',compact('equipo','nombre'));
-
-
-})->name('nosotros');
+Route::get('nosotros/{nombre?}', [PagesController::class, 'nosotros'])->name('nosotros');
