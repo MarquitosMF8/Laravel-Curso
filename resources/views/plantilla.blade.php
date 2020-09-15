@@ -14,11 +14,12 @@
     <div class="container">
     <a href="{{ route('foto') }}" class="btn btn-primary">Fotos</a>
     <a href="{{ route('noticias') }}" class="btn btn-primary">Blog</a>
+    <a href="{{ route('nosotros') }}" class="btn btn-primary">Nosotros</a>
     </div>
     <div class="container">
         @yield('seccion')
     </div>
-    <div>Footer</div>
+    <div class="container bg-dark text-white text-center">Footer</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
