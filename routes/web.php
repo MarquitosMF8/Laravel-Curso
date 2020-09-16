@@ -7,6 +7,8 @@ Route::get('/', [PagesController::class, 'inicio'])->name('inicio');
 
 Route::get('/detalle/{id}', [PagesController::class, 'detalle'])->name('notas.detalle');
 
+Route::post('/',[PagesController::class, 'crear'])->name('notas.crear');
+
 //Route::resource('fotos', PagesController::class, ['except' => ['fotos', 'edit']]);
 
 Route::get('fotos', [PagesController::class, 'fotos'])->name('fotos');
