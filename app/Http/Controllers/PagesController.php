@@ -12,6 +12,11 @@ class PagesController extends Controller
         return view('welcome', compact('notas'));
     }
 
+    public function detalle($id){
+        $nota = app\Models\Nota::findOrFail($id);
+        return view('notas.detalle', compact('nota'));
+    }
+
     public function fotos(){
         return view('fotos');
     }

@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 
-Route::get('/', [PagesController::class, 'inicio']);
+Route::get('/', [PagesController::class, 'inicio'])->name('inicio');
+
+Route::get('/detalle/{id}', [PagesController::class, 'detalle'])->name('notas.detalle');
 
 //Route::resource('fotos', PagesController::class, ['except' => ['fotos', 'edit']]);
 
