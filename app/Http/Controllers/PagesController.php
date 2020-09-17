@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App;
+use PhpParser\Node\Stmt\Return_;
 
 class PagesController extends Controller
 {
@@ -62,5 +63,13 @@ class PagesController extends Controller
         $notaActualizada->save();
         return back()->with('mensaje', 'Nota editada!');
     
+    }
+
+    public function eliminar($id){
+
+        $notaElimnar = app\Models\Nota::findOrFail($id);
+        $notaEliminar->delete();
+
+        return back()->with('mensaje', 'Nota Eliminada');
     }
 }

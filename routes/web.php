@@ -20,3 +20,5 @@ Route::get('nosotros/{nombre?}', [PagesController::class, 'nosotros'])->name('no
 Route::get('editar/{id}',[PagesController::class, 'editar'])->name('notas.editar');
 
 Route::put('editar/{id}',[PagesController::class, 'update'])->name('notas.update');
+
+Route::delete('/eliminar/{id}',[PagesController::class, 'eliminar'])->name('notas.eliminar');

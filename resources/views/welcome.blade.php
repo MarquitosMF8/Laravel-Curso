@@ -62,6 +62,12 @@
                 <td>{{$item->descripcion}}</td>
                 <td>
                     <a href="{{route('notas.editar', $item)}}" class="btn btn-warning btn-sm">Editar</a>
+
+                    <form action="{{route('notas.eliminar', $item)}}" class="d-inline" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                    </form>
                 </td>
             </tr>
           @endforeach
