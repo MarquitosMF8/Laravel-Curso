@@ -9,7 +9,7 @@ use PhpParser\Node\Stmt\Return_;
 class PagesController extends Controller
 {
     public function inicio(){
-        $notas = app\Models\Nota::all();
+        $notas = App\Models\Nota::paginate(4);
         return view('welcome', compact('notas'));
     }
 
@@ -67,9 +67,10 @@ class PagesController extends Controller
 
     public function eliminar($id){
 
-        $notaElimnar = app\Models\Nota::findOrFail($id);
+        $notaEliminar = App\Models\Nota::findOrFail($id);
         $notaEliminar->delete();
-
+    
         return back()->with('mensaje', 'Nota Eliminada');
     }
+    
 }

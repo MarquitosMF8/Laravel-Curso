@@ -73,5 +73,7 @@
           @endforeach
         </tbody>
       </table>
+
+      {{ $notas->links() }}
 </div>
 @endsection
