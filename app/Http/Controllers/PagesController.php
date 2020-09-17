@@ -48,4 +48,19 @@ class PagesController extends Controller
         //return view('nosotros', ['equipo'=>$equipo,'nombre'=>$nombre]);
         return view('nosotros',compact('equipo','nombre'));
     }
+
+    public function editar($id){
+        $nota = App\Models\Nota::findOrFail($id);
+        return view('notas.editar', compact('nota'));
+    }
+    
+    public function update(Request $request, $id){
+        
+        $notaActualizada = App\Models\Nota::find($id);
+        $notaActualizada->nombre = $request->nombre;
+        $notaActualizada->descripcion = $request->descripcion;
+        $notaActualizada->save();
+        return back()->with('mensaje', 'Nota editada!');
+    
+    }
 }

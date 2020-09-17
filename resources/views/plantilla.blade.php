@@ -20,7 +20,7 @@
     <div class="container">
         @yield('seccion')
     </div>
-    <div class="container bg-dark text-white text-center">Footer</div>
+    <div class="container bg-dark text-white text-center mt-5">Footer</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

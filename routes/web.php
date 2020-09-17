@@ -16,3 +16,7 @@ Route::get('fotos', [PagesController::class, 'fotos'])->name('fotos');
 Route::get('blog', [PagesController::class, 'blog'])->name('noticias');
 
 Route::get('nosotros/{nombre?}', [PagesController::class, 'nosotros'])->name('nosotros');
+
+Route::get('editar/{id}',[PagesController::class, 'editar'])->name('notas.editar');
+
+Route::put('editar/{id}',[PagesController::class, 'update'])->name('notas.update');
